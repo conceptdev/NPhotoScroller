@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfImageInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ImageInfo>
+		<Name>Lake</Name>
+		<Height>2736</Height>
+		<Width>3648</Width>
+	</ImageInfo>
+	<ImageInfo>
+		<Name>Shed</Name>
+		<Height>3648</Height>
+		<Width>2736</Width>
+	</ImageInfo>
+	<ImageInfo>
+		<Name>Tree</Name>
+		<Height>4752</Height>
+		<Width>3168</Width>
+	</ImageInfo>
+</ArrayOfImageInfo>

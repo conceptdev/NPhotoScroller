@@ -2,6 +2,16 @@ A MonoTouch / c# port of Apple's PhotoScroller sample
 
 http://developer.apple.com/library/ios/#samplecode/PhotoScroller/
 
+YOU NEED TO GET THE IMAGE FILES FROM DEVELOPER.APPLE.COM LINK ABOVE (click on [Download Sample Code] button in the header
+
+There are 100Mb of images that belong in 
+(projectroot)/Images/ImageTiles/
+that you need to get from the original sample.
+
+
+
+
+
 Original README reproduced below:
 
 

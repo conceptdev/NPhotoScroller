@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPhotoScroller", "NPhotoScroller.csproj", "{022045E4-6826-4F24-8B69-3ABB609EB39A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Debug|iPhone.Build.0 = Debug|iPhone
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Release|iPhone.ActiveCfg = Release|iPhone
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Release|iPhone.Build.0 = Release|iPhone
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{022045E4-6826-4F24-8B69-3ABB609EB39A}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = NPhotoScroller.csproj
+	EndGlobalSection
+EndGlobal
