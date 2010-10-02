@@ -129,11 +129,9 @@ namespace NPhotoViewController
 			imageView = new UIImageView (image);
 			this.AddSubview (imageView);
 			
-			this.ContentSize = image.Size;					Console.WriteLine("this.ContentSize " + image.Size);
+			this.ContentSize = image.Size;
 			this.setMaxMinZoomScalesForCurrentBounds();
 			this.ZoomScale = this.MinimumZoomScale;
-			Console.WriteLine("this.MinimumZoomScale " + this.MinimumZoomScale);
-			Console.WriteLine("this.ZoomScale " + this.ZoomScale);
 		}
 		
 		public void displayTiledImageNamed (string imageName, SizeF imageSize)
@@ -152,11 +150,9 @@ namespace NPhotoViewController
 			((TilingView)imageView).annotates = true; 				// ** remove this line to remove the white tile grid **
 			this.AddSubview(imageView);
 			
-			this.ContentSize = imageSize;					Console.WriteLine("this.ContentSize " + imageSize);
+			this.ContentSize = imageSize;
 			this.setMaxMinZoomScalesForCurrentBounds();
-			this.ZoomScale = this.MinimumZoomScale;					// ** remove this line to see the image 'zoomed in' **
-			Console.WriteLine("this.MinimumZoomScale " + this.MinimumZoomScale);
-			Console.WriteLine("this.ZoomScale " + this.ZoomScale);
+			this.ZoomScale = this.MinimumZoomScale;
 		}
 		
 		public void setMaxMinZoomScalesForCurrentBounds()

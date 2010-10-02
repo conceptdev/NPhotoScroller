@@ -51,6 +51,8 @@ using MonoTouch.Foundation;
 using MonoTouch.CoreAnimation;
 using MonoTouch.CoreGraphics;
 using MonoTouch.UIKit;
+using MonoTouch.ObjCRuntime;
+
 
 namespace NPhotoViewController
 {
@@ -59,15 +61,23 @@ namespace NPhotoViewController
 		/*
 		Not really sure how to approach the problem of overriding the (Class)
 		'static' in the Objective-C example
-		*/
+		-- i.e. what I tried was WRONG [CD] see below for the correct method
 		private CATiledLayer __layer;
 		public override CALayer Layer {
 			get 
 			{	// set in ctor
 				return __layer;
 			}
-		}
+		}	*/
 		
+		/// <summary>
+		/// Thanks to @migueldeicaza for the _correct_ pattern to use here
+		/// </summary>
+		[Export ("layerClass")]
+		public static Class LayerClass ()
+		{
+			return new Class (typeof (CATiledLayer));
+		}
 		
 		/// <summary>
 		/// initWithImageName
@@ -75,11 +85,9 @@ namespace NPhotoViewController
 		public TilingView (string name, SizeF size) : base(new RectangleF(0, 0, size.Width, size.Height))
 		{
 			imageName = name;
-			
-			__layer = new CATiledLayer();
-			__layer.LevelsOfDetail = 4;
-//			var tiledLayer = (CATiledLayer)this.Layer;
-//			tiledLayer.LevelsOfDetail = 4;
+
+			var tiledLayer = (CATiledLayer)this.Layer;
+			tiledLayer.LevelsOfDetail = 4;
 		}
 		
 		public string imageName {get;set;}
@@ -93,10 +101,6 @@ namespace NPhotoViewController
 		    // its "a" component, which is one of the two scale components. We could also ask for "d".
 		    // This assumes (safely) that the view is being scaled equally in both dimensions.
 			var scale = context.GetCTM().xx;  // .a			// http://developer.apple.com/library/ios/#documentation/GraphicsImaging/Reference/CGAffineTransform/Reference/reference.html#//apple_ref/doc/c_ref/CGAffineTransform
-			//scale = 0.125f;		// ** uncomment this line to see the image tiled at different level **
-			//scale = 0.25;			// ** uncomment this line to see the image tiled at different level  **
-			Console.WriteLine ("matrix: " + 
-			                   context.TextMatrix);
 			
 			var tiledLayer = (CATiledLayer)this.Layer;
 			var tileSize = tiledLayer.TileSize;
@@ -117,8 +121,6 @@ namespace NPhotoViewController
 		    int lastCol  = (int)Math.Floor( (rect.GetMaxX()-1) / tileSize.Width);
 		    int firstRow = (int)Math.Floor(rect.GetMinY() / tileSize.Height);
 		    int lastRow  = (int)Math.Floor( (rect.GetMaxY()-1) / tileSize.Height);
-		
-Console.WriteLine("Draw({4}) {0},{1} - {2},{3}", firstCol, firstRow, lastCol, lastRow, scale);
 			
 		    for (int row = firstRow; row <= lastRow; row++) 
 			{

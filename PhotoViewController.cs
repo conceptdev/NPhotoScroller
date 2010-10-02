@@ -60,8 +60,11 @@ namespace NPhotoViewController
 {
 	public class PhotoViewController : UIViewController
 	{
+		/// <summary>
+		/// true: use the CATiledLayer to show a 'multi-scale-image' which is memory-efficient
+		/// false: load the full-size image into memory for scaling
+		/// </summary>
 		bool useTiledImage = true;
-		
 		
 		UIScrollView pagingScrollView;
 		
@@ -187,7 +190,6 @@ namespace NPhotoViewController
 			bool foundPage = false;
 		    foreach (ImageScrollView page in visiblePages.ToArray<ImageScrollView>())
 			{
-				//var page = (ImageScrollView)obj;
 		        if (page.index == index)
 				{
 		            foundPage = true;
